@@ -10,6 +10,11 @@ from AVLTrees import AVLTrees
 from AVLTrees import Node
 from RBTrees import RBTrees
 
+
+import time
+start_time = time.time()
+
+
 global tree #variable is created to store either the red and black tree or AVL tree
 def countAnagram(word, wordtree,  wordlist, prefix=""):#this method finds the number of anagrams for a word given found in a file containing 354,984 words
     if len(word) <= 1:
@@ -93,7 +98,7 @@ def main():
                 tree = AVLTrees() #create an empty tree
                 populateAVLtree("words.txt", tree) #populate AVL Tree
                 print("AVL Tree Populated")
-                
+                print("--- %s seconds ---" % (time.time() - start_time))
                 userWord2 = input("\nEnter the word you want to search: ")
                 userWord = (userWord2.lower())
                 count = [] #list used in  method (countAnagrams)
@@ -114,6 +119,7 @@ def main():
             try:
                 tree = RBTrees() #create an empty tree
                 populateRBTree("words.txt", tree)
+                print("--- %s seconds ---" % (time.time() - start_time))
                 print("RB Tree is populated")
 
                 userWord2 = input("\nEnter the word you want to search: ")
@@ -134,12 +140,14 @@ def main():
         else:
             print("invalid input")
             
-        print("\n\n\nFinding the max number of anagrams in 'words2.txt")
+        print("\n\n\nFinding the max number of anagrams in 'words4.txt")
         try:
-            findMaxAnagrams("words2.txt", tree)
+            findMaxAnagrams("words4.txt", tree)
             break
         except FileNotFoundError:
             print("\n\nFile not found.")
             break
+        
+    print("--- %s seconds ---" % (time.time() - start_time))
                      
 main() 
