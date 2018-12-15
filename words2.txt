@@ -1,2 +1,5 @@
-run
-spot
+phases
+gas
+solid
+liquid
+content

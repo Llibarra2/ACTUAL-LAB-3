@@ -1,0 +1,15 @@
+phases
+gas
+solid
+liquid
+content
+tent
+temporary
+loop
+slack
+oxygen
+helium
+care
+stuff
+love
+suffer
